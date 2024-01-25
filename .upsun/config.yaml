@@ -43,43 +43,9 @@ applications:
                         static\/*:
                             expires: 365d
 
-    # App 2: Backend (Python)
-    backend:
 
-        source:
-            root: "backend"
 
-        type: "python:3.11"
 
-        build:
-            flavor: none
-        hooks:
-            build: |
-                set -eux
-                pip install --upgrade pip
-                pip install -r requirements.txt
-                
-        web:
-            commands:
-                start: "gunicorn main:app"
-            upstream:
-                socket_family: tcp
-            locations:
-                /:
-                    passthru: true
-
-# #add_service_start
-# ######################################################################################################################
-# # Step 3: Add a service. Uncomment this section.
-# ######################################################################################################################
-#         relationships:
-#             redis_session: "redis_service:redis"
-
-# services:
-#     redis_service:
-#         type: "redis:7.0"
-# ######################################################################################################################
-# #add_service_end
     
 # Routes configuration.
 routes:
@@ -93,8 +59,3 @@ routes:
         id: frontend-redirect
         type: redirect
         to: "https://{default}/"
-
-    "https://{default}/api/":
-        id: backend
-        type: upstream
-        upstream: "backend:http"
