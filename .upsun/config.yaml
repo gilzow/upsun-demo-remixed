@@ -27,9 +27,6 @@ applications:
                 export REACT_APP_PROJECT_ID=$PLATFORM_PROJECT
                 npm run build
 
-        relationships:
-           api: "backend:http"
-
         web:
             locations:
                 /:
