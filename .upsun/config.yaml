@@ -39,8 +39,8 @@ applications:
                     rules:
                         static\/*:
                             expires: 365d
-                /api/v1/environment:
-                    root: frontend
+                /api:
+                    root: frontend/api
                     index:
                         - index.json
 
