@@ -40,9 +40,11 @@ applications:
                         static\/*:
                             expires: 365d
                 /api:
-                    root: frontend/api
+                    root: public/api
                     index:
                         - index.json
+                    allow: true
+                    scripts: false
 
 
 
