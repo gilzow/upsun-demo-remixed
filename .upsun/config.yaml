@@ -41,7 +41,7 @@ applications:
                     rules:
                         static\/*:
                             expires: 365d
-                /api:
+                /api/v1/environment:
                     root: api
                     index:
                         - index.json
