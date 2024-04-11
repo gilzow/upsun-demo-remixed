@@ -51,10 +51,17 @@ applications:
             api:
                 source: storage
                 source_path: api
+###############################################################
+# Step 3: Add a service. Uncomment this section.
+###############################################################
+#        relationships:
+#            redis_session: "redis_service:redis"
+#
+#services:
+#    redis_service:
+#        type: "redis:7.0"
+###############################################################
 
-
-
-    
 # Routes configuration.
 routes:
     "https://{default}/":
