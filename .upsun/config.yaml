@@ -26,6 +26,8 @@ applications:
                 npm install
                 export REACT_APP_PROJECT_ID=$PLATFORM_PROJECT
                 npm run build
+            deploy: |
+                bash scripts/api.sh
 
         web:
             locations:
@@ -40,11 +42,15 @@ applications:
                         static\/*:
                             expires: 365d
                 /api:
-                    root: public/api
+                    root: api
                     index:
                         - index.json
                     allow: true
                     scripts: false
+        mounts:
+            api:
+                source: storage
+                source_path: api
 
 
 
