@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 storage="file"
 evnType="${PLATFORM_ENVIRONMENT_TYPE}"
-api="/frontend/api/index.json"
+api="/api/index.json"
 # is redis available?
 if [[ -n ${REDIS_SESSION_HOST+x} ]]; then
   storage="redis"
